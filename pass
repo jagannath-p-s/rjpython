@@ -1,0 +1,24 @@
+ github logins - useremail: codefireio@gmail.com pass: @@Rjkkm@123
+...........................................................................
+supabase 
+
+project url : https://smfonqblavmkgmcylqoc.supabase.co
+
+...........................................................................
+api key : 
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtZm9ucWJsYXZta2dtY3lscW9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxMjI0MjQsImV4cCI6MjAyNzY5ODQyNH0.Yk9jlcLu2Svi8cAsQLuMJHflvBqbtusICyNj2ZfrVZg
+
+............................................................................
+
+
+SUPABASE_URL = 'https://smfonqblavmkgmcylqoc.supabase.co'
+SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtZm9ucWJsYXZta2dtY3lscW9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTIxMjI0MjQsImV4cCI6MjAyNzY5ODQyNH0.Yk9jlcLu2Svi8cAsQLuMJHflvBqbtusICyNj2ZfrVZg'
+supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
+
+
+.............................................................................
+
+app key = b'\xcf\x8a\xf6\xf0J\x1a\x06\x03P\x08\xbb.\x81\xa8\xa5\x88\x0e6\x9b\x8eUz\x02'
+
+...........................................................................................

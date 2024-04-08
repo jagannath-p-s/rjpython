@@ -1,0 +1,62 @@
+table create 
+
+
+CREATE TABLE IF NOT EXISTS customers (
+    "SL NO" INTEGER,
+    "CUSTOMER CODE" INTEGER,
+    "ADDRESS1" TEXT,
+    "ADDRESS2" TEXT,
+    "ADDRESS3" TEXT,
+    "ADDRESS4" TEXT,
+    "PIN CODE" TEXT,
+    "PHONE" TEXT,
+    "MOBILE" TEXT,
+    "NET WEIGHT" DECIMAL(10, 3),
+    "LAST SALES DATE" DATE
+);
+
+...........................................................................................
+
+CREATE TABLE IF NOT EXISTS customers (
+    "SL NO" INTEGER,
+    "CUSTOMER CODE" INTEGER PRIMARY KEY,
+    "ADDRESS1" TEXT,
+    "ADDRESS2" TEXT,
+    "ADDRESS3" TEXT,
+    "ADDRESS4" TEXT,
+    "PIN CODE" TEXT,
+    "PHONE" TEXT,
+    "MOBILE" TEXT,
+    "NET WEIGHT" DECIMAL(10, 3),
+    "LAST SALES DATE" DATE
+);
+
+................................................................................................
+
+-- Create points table
+CREATE TABLE IF NOT EXISTS points (
+    "CUSTOMER CODE" INTEGER PRIMARY KEY,
+    "SL NO" INTEGER,
+    "ADDRESS1" TEXT,
+    "ADDRESS2" TEXT,
+    "ADDRESS3" TEXT,
+    "ADDRESS4" TEXT,
+    "PIN CODE" TEXT,
+    "PHONE" TEXT,
+    "MOBILE" TEXT,
+    "TOTAL POINTS" INTEGER,
+    "CLAIMED POINTS" INTEGER DEFAULT 0,
+    "UNCLAIMED POINTS" INTEGER,
+    "LAST SALES DATE" DATE,
+    FOREIGN KEY ("CUSTOMER CODE") REFERENCES customers("CUSTOMER CODE")
+);
+
+-- Calculate total points and insert data into points table
+INSERT INTO points ("CUSTOMER CODE", "SL NO", "ADDRESS1", "ADDRESS2", "ADDRESS3", "ADDRESS4", "PIN CODE", "PHONE", "MOBILE", "TOTAL POINTS", "UNCLAIMED POINTS", "LAST SALES DATE")
+SELECT "CUSTOMER CODE", "SL NO", "ADDRESS1", "ADDRESS2", "ADDRESS3", "ADDRESS4", "PIN CODE", "PHONE", "MOBILE",
+       FLOOR("NET WEIGHT" / 10) AS "TOTAL POINTS",
+       FLOOR("NET WEIGHT" / 10) AS "UNCLAIMED POINTS",
+       "LAST SALES DATE"
+FROM customers;
+
+..............................................................................................................
